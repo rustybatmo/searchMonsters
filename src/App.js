@@ -11,6 +11,11 @@ class App extends Component {
       ],
     };
   }
+  componentDidMount() {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((res) => res.json())
+      .then((users) => this.setState({ monsters: users }));
+  }
 
   handleClick = (e) => {
     console.log(this.state);
